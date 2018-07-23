@@ -2,8 +2,10 @@
 #
 # Bootsrap qemu into the provided directory
 
+set -ex
+
 # Check inputs
-if [ "$#" -ne 1 ]; then 
+if [ "$#" -ne 1 ]; then
     echo "Usage: $0 MOUNT"
     echo "MOUNT - mount location in the file system"
     exit

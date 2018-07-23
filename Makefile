@@ -1,15 +1,15 @@
 # Helper makefile to demonstrate the use of the rpi-emu docker environment
 # This is mostly useful for development and extension as part of an image builder
-# 
+#
 # For an example using this in a project, see Makefile.example
 
-DATE=2016-05-27
+DATE=2018-06-27
 
-DIST=$(DATE)-raspbian-jessie-lite
+DIST=$(DATE)-raspbian-stretch-lite
 ZIP=$(DIST).zip
 IMAGE=$(DIST).img
 
-DL_PATH=http://vx2-downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2016-05-31/$(ZIP)
+DL_PATH=http://vx2-downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2018-06-29/$(ZIP)
 CWD=$(shell pwd)
 
 # Docker arguments
@@ -44,7 +44,7 @@ expand: build bootstrap
 # Launch the docker image without running any of the utility scripts
 run: build bootstrap
 	@echo "Launching interactive docker session"
-	@docker run $(RUN_ARGS) /bin/bash 
+	@docker run $(RUN_ARGS) /bin/bash
 
 # Launch the docker image into an emulated session
 run-emu: build bootstrap
